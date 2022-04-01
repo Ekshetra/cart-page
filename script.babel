@@ -1,7 +1,7 @@
 const products = [
-	{id: 1,title: 'Paper Presentation', price: 300, qty: 1, image: 'http://lorempixel.com/150/150/'},  
-	{id: 2,title: 'Poster Presentationg',price:     300, qty: 1,image: 'http://lorempixel.com/150/150/'},  
-	{id: 3,title: 'Technical Quiz',price: 500,qty: 1,image: 'http://lorempixel.com/150/150/'},  
+	{id: 1,title: 'Paper Presentation', price: 150, qty: 1, image: 'http://lorempixel.com/150/150/'},  
+	{id: 2,title: 'Poster Presentationg',price: 150, qty: 1,image: 'http://lorempixel.com/150/150/'},  
+	{id: 3,title: 'Technical Quiz',price: 125,qty: 1,image: 'http://lorempixel.com/150/150/'},  
 	{id: 4,title: 'Blind Coding',price: 50, qty: 1, image: 'http://lorempixel.com/150/150/'},  
 	
 	{id: 5,title: 'Mobile E-Sports',price: 100, qty: 1, image: 'http://lorempixel.com/150/150/'}, 
