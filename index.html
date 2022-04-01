@@ -49,7 +49,7 @@
          <div class="text-center" v-for="item in items">
             <img class="img-responsive" :src="item.image" alt="">
             <h5>{{ item.title }}</h5>
-            <h6>Rs. {{ item.price | formatCurrency }}</h6>
+            <h6>Rs. {{ item.price | formatCurrency }} per Person</h6>
 							 
                <button @click="addToCart(item)" class="btn btn-sm btn-primary">Add to Cart</button>
             </p>
