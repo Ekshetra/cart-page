@@ -1,0 +1,60 @@
+<body style="background:#000;color:#fff;">
+<div id="app" class="container">
+   <div class="text-right"><button class="btn btn-primary" data-toggle="modal" data-target="#cartModal">Cart ({{totalItems}})</button></div>
+  
+   <!-- Modal --> 
+   <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">          
+								 <span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel" style="color:#000;">Cart</h4>
+            </div>
+            <div class="modal-body">
+               <shopping-cart inline-template :items="cartItems">
+                  <div>
+                     <table class="table table-cart">
+                        <tr v-for="(item, index) in items">
+                           <td style="color:#000;">{{item.title}}</td>
+                         
+                           <td class="text-right" style="color:#000;">Rs. {{item.price | formatCurrency}}</td>
+                           <td>
+                              <button @click="removeItem(index)"><span class="glyphicon glyphicon-trash" style="color:#000;"></span></button>
+                           </td>
+                        </tr>
+                        <tr v-show="items.length === 0">
+                           <td colspan="4" class="text-center" style="color:#000;">Cart is empty</td>
+                        </tr>
+                        <tr v-show="items.length > 0">
+                           <td></td>
+                           <td class="text-right" style="color:#000;">Cart Total</td>
+                           <td class="text-right" style="color:#000;">Rs. {{Total | formatCurrency}}</td>
+                           <td></td>
+                        </tr>
+                     </table>
+                  </div>
+                  <!-- /.container -->
+               </shopping-cart>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+	
+   <div class="container">
+      <div class="row">
+         <div class="text-center" v-for="item in items">
+            <img class="img-responsive" :src="item.image" alt="">
+            <h5>{{ item.title }}</h5>
+            <h6>Rs. {{ item.price | formatCurrency }}</h6>
+							 
+               <button @click="addToCart(item)" class="btn btn-sm btn-primary">Add to Cart</button>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+</body>
